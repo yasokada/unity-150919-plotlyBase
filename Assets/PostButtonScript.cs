@@ -5,6 +5,8 @@ using UnityEngine.UI; // for Input Field
 using NS_MyPlotlyUtil; 
 
 /*
+ * v0.2 2015/09/19
+ *   - add time series plot
  * v0.1 2015/09/19
  *   - adding random x,y data
  */ 
@@ -27,8 +29,13 @@ public class PostButtonScript : MonoBehaviour {
 			float xpos = Random.Range (0, 100) / 10.0f;
 			float ypos = Random.Range (0, 100) / 10.0f;
 
-			string dataStr = MyPlotlyUtil.GetAddString_xy (
-				IF_username.text, IF_apikey.text, xpos, ypos);
+			// 1. x,y plot
+//			string dataStr = MyPlotlyUtil.GetAddString_xy (
+//				IF_username.text, IF_apikey.text, xpos, ypos);
+
+			// 2. time series
+			string dataStr = MyPlotlyUtil.GetAddString_time_y (
+				IF_username.text, IF_apikey.text, System.DateTime.Now, ypos);
 
 			byte [] data = System.Text.Encoding.UTF8.GetBytes (dataStr);
 		

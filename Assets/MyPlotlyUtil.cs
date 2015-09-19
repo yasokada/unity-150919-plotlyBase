@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+//using System; // for System.DateTime
 
 namespace NS_MyPlotlyUtil
 {
@@ -27,6 +28,26 @@ namespace NS_MyPlotlyUtil
 			"}";
 			return res;
 		}
+
+		public static string GetAddString_time_y(string username, string apikey, System.DateTime dt, float ypos) {
+			string res = 
+				"un=" + username + "&" +
+					"key=" + apikey + "&" +
+					"origin=plot&" +
+					"platform=lisp&" +
+					"args=[[\"" + dt.ToString ("yyyy-MM-dd hh:mm:ss") + "\"]," +
+					"[" + ypos.ToString("0.000") + "]]&" +
+					"kwargs={\"filename\": \"plot from api 150919time\"," +
+					//				"\"fileopt\": \"overwrite\"," + 
+					"\"fileopt\": \"extend\"," +
+					
+					"\"layout\": {" +
+					"\"title\": \"experimental data\"" +
+					"}," + 
+					"\"world_readable\": true" + // set graph to public
+					"}";
+			return res;
+		}
 	}
-	
 }
+
