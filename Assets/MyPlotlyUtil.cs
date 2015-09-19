@@ -5,13 +5,14 @@ using System.Collections;
 namespace NS_MyPlotlyUtil
 {
 	public static class MyPlotlyUtil {
-		public static string GetPostString(string username, string apikey) {
+		public static string GetPostString(string username, string apikey, float xpos, float ypos) {
 			string res = 
 			"un=" + username + "&" +
 			"key=" + apikey + "&" +
 			"origin=plot&" +
 			"platform=lisp&" +
-			"args=[[6, 7, 8], [3, 4, 5]]&" +
+			"args=[[" + xpos.ToString("0.000") + "]," +
+				  "[" + ypos.ToString("0.000") + "]]&" +
 			"kwargs={\"filename\": \"plot from api 150919\"," +
 //				"\"fileopt\": \"overwrite\"," + 
 				"\"fileopt\": \"extend\"," +
