@@ -20,6 +20,8 @@ public class PostButtonScript : MonoBehaviour {
 		
 		WWW www = new WWW (url, data);
 		yield return www;
+
+		Debug.Log (www.text);
 		
 		int nop = 1; // for breakpoint
 	}

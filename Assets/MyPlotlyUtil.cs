@@ -11,13 +11,15 @@ namespace NS_MyPlotlyUtil
 			"key=" + apikey + "&" +
 			"origin=plot&" +
 			"platform=lisp&" +
-			"args=[[0, 1, 2], [3, 4, 5], [1, 2, 3], [6, 6, 5]]&" +
+			"args=[[6, 7, 8], [3, 4, 5]]&" +
 			"kwargs={\"filename\": \"plot from api 150919\"," +
-				"\"fileopt\": \"overwrite\"," + 
-				"\"style\": {" + 
-					"\"type\": \"bar\"" +
-				"}," + 
-				"\"traces\": [1]," + 
+//				"\"fileopt\": \"overwrite\"," + 
+				"\"fileopt\": \"extend\"," +
+
+//				"\"style\": {" + 
+//					"\"type\": \"bar\"" +
+//				"}," + 
+//				"\"traces\": [1]," + 
 				"\"layout\": {" +
 					"\"title\": \"experimental data\"" +
 				"}," + 
