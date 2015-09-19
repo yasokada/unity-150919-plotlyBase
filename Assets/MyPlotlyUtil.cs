@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using System.Net; // for Dns.XXX()
 
 namespace NS_MyPlotlyUtil
 {
 	public static class MyPlotlyUtil {
-		public static string GetPostString(string username, string apikey, float xpos, float ypos) {
+		public static string GetAddString_xy(string username, string apikey, float xpos, float ypos) {
 			string res = 
 			"un=" + username + "&" +
 			"key=" + apikey + "&" +
@@ -24,7 +23,7 @@ namespace NS_MyPlotlyUtil
 				"\"layout\": {" +
 					"\"title\": \"experimental data\"" +
 				"}," + 
-				"\"world_readable\": true" +
+				"\"world_readable\": true" + // set graph to public
 			"}";
 			return res;
 		}
